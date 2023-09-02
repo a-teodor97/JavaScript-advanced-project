@@ -2,7 +2,7 @@
 # NiceCity
 
 Benvenuti in NiceCity, un'applicazione web che fornisce informazioni sulle città. Esplorate e scoprite la qualità della vita, l'abitazione, la sicurezza e altro ancora delle diverse città!
-![Image Alt Text](/src/images/project -image-preview.png)
+![Image Alt Text](https://github.com/a-teodor97/JavaScript-advanced-project/blob/master/src/images/project-image-preview.png?raw=true)
 
 ## Sito Web
 
