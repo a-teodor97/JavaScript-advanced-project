@@ -6,7 +6,7 @@ Benvenuti in NiceCity, un'applicazione web che fornisce informazioni sulle citt√
 
 ## Sito Web
 
-Visitate il nostro sito web all'indirizzo [https://nice-city.netlify.app/](https://nice-city.netlify.app/) per utilizzare NiceCity direttamente nel vostro browser.
+Visitate il sito web all'indirizzo [https://nice-city.netlify.app/](https://nice-city.netlify.app/) per utilizzare NiceCity direttamente nel vostro browser.
 
 ## Tabella dei Contenuti
 - [Introduzione](#introduzione)
