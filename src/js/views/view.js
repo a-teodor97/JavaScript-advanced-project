@@ -78,6 +78,7 @@ class view {
     // Create a new map instance
     this._map = L.map("map").setView([latitude, longitude], zoom);
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      minZoom: 2,
       maxZoom: 19,
       attribution: "© OpenStreetMap",
     }).addTo(this._map);
