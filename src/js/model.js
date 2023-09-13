@@ -1,21 +1,33 @@
+import axios from "axios";
+import { get } from "lodash";
+
 export const state = {
   city: {},
 };
 
 export const loadSearchResults = async function (city) {
   try {
-    const scoresResponse = await fetch(
+    const scoresResponse = await axios.get(
       `https://api.teleport.org/api/urban_areas/slug:${city}/scores/`
     );
-    const imagesResponse = await fetch(
+    const imagesResponse = await axios.get(
       `https://api.teleport.org/api/urban_areas/slug:${city}/images/`
     );
-    const scoresData = await scoresResponse.json();
-    const imagesData = await imagesResponse.json();
+
+    const scoresData = await scoresResponse;
+    const imagesData = await imagesResponse;
 
     console.log(scoresData, imagesData);
 
-    const { ...categories } = scoresData.categories;
+    // Destructuring with Lodash _.get()
+
+    const { ...categories } = _.get(scoresData, "data.categories");
+    const teleport_city_score = _.get(scoresData, "data.teleport_city_score");
+    const summary = _.get(scoresData, "data.summary");
+    const image = _.get(imagesData, "data.photos[0].image.web");
+
+    // console.log(categories, teleport_city_score, summary, image);
+
     state.city = {
       housing: categories[0].score_out_of_10,
       safety: categories[7].score_out_of_10,
@@ -24,9 +36,9 @@ export const loadSearchResults = async function (city) {
       healthcare: categories[8].score_out_of_10,
       education: categories[9].score_out_of_10,
       leisure: categories[14].score_out_of_10,
-      image: imagesData.photos[0].image.web,
-      summary: scoresData.summary,
-      overallScore: scoresData.teleport_city_score,
+      image: image,
+      summary: summary,
+      overallScore: teleport_city_score,
     };
   } catch (error) {
     throw error;
@@ -36,11 +48,12 @@ export const loadSearchResults = async function (city) {
 export const getCityCoords = async function (city) {
   const encodedCity = encodeURIComponent(city);
   try {
-    const res = await fetch(
+    const res = await axios.get(
       `https://nominatim.openstreetmap.org/search?city=${encodedCity}&format=json`
     );
-    const data = await res.json();
-    const { lat: latitude, lon: longitude } = data[0];
+    const data = await res;
+    console.log(data);
+    const { lat: latitude, lon: longitude } = data.data[0];
     // Settings state
     state.city = {
       latitude,

@@ -1,3 +1,5 @@
+import { capitalize } from "lodash";
+
 class view {
   _data = {
     markers: [],
@@ -9,7 +11,7 @@ class view {
   _errorMessage =
     "😕Sorry, we have no data about this city, try with another one!";
   _map = null;
-  // _query; // used to save query string to memory
+
   getQuery() {
     const query = this._searchBarEl.value
       .split(" ")
@@ -31,15 +33,15 @@ class view {
   }
 
   renderCityData(data) {
-    // if ((this._searchBarEl.value = "")) return;
-    // else {
     this._qualityEl.innerHTML = "";
     this._data = data;
     const city = this._searchBarEl.value;
-    const cityName = city.charAt(0).toUpperCase() + city.slice(1);
+    // const cityName = city.charAt(0).toUpperCase() + city.slice(1);
+    // capitalizing the input throug lodash
+    const capitalizedCityName = _.capitalize(city);
 
     const markup = `
-      <h3>Standard of living in ${cityName}</h3>
+      <h3>Standard of living in ${capitalizedCityName}</h3>
       <img class="city-img" src="${this._data.image}" alt="city image">
       <p class="city-summary">${this._data.summary}</p>
       <div class="scores">
