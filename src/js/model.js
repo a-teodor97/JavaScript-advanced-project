@@ -1,5 +1,5 @@
 import axios from "axios";
-import { get } from "lodash";
+import _ from "lodash";
 
 export const state = {
   city: {},

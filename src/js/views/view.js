@@ -1,4 +1,4 @@
-import { capitalize } from "lodash";
+import _ from "lodash";
 
 class view {
   _data = {
