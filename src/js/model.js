@@ -17,7 +17,7 @@ export const loadSearchResults = async function (city) {
     const scoresData = await scoresResponse;
     const imagesData = await imagesResponse;
 
-    console.log(scoresData, imagesData);
+    // console.log(scoresData, imagesData);
 
     // Destructuring with Lodash _.get()
 
@@ -52,7 +52,7 @@ export const getCityCoords = async function (city) {
       `https://nominatim.openstreetmap.org/search?city=${encodedCity}&format=json`
     );
     const data = await res;
-    console.log(data);
+    // console.log(data);
     const { lat: latitude, lon: longitude } = data.data[0];
     // Settings state
     state.city = {
