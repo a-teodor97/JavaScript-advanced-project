@@ -44,9 +44,6 @@ body {
   height: 5.2rem;
   align-self: center;
   margin-bottom: 2.2rem;
-}
-
-.logo {
   text-align: center;
   font-size: 4rem;
 }
@@ -87,7 +84,6 @@ body {
 .city-data-container {
   list-style: none;
   height: 77vh;
-  /* overflow-y: scroll; */
   overflow-x: hidden;
 }
 
@@ -108,7 +104,6 @@ body {
 
 .scores {
   margin-top: 2rem;
-  /* font-size: 1.6rem; */
 }
 
 .scores :last-child {
@@ -121,4 +116,59 @@ body {
   flex: 1;
   height: 100%;
   background-color: var(--color-light--1);
+}
+
+/* MEDIA QUERIES */
+
+/*////////////////////////////////////////////
+// BELOW 850px (Phones and tablet portrait) //
+////////////////////////////////////////////*/
+
+@media only screen and (max-width: 850px) and (orientation: portrait) {
+  body {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .sidebar {
+    flex-basis: 53rem;
+    height: 65%;
+    padding: 1rem 2rem 2rem 2rem;
+  }
+
+  .city-data-container {
+    height: auto;
+  }
+
+  .logo {
+    margin-bottom: 1px;
+    font-size: 3.5rem;
+  }
+  .search-bar {
+    padding: 0rem 1rem 0rem 2rem;
+  }
+}
+
+/*///////////////////////////////////////////////
+// BELOW 1200px (Landscape Phones and Tablets) //
+///////////////////////////////////////////////*/
+
+@media only screen and (max-width: 1200px) and (orientation: landscape) {
+  body {
+    padding: 1rem;
+  }
+
+  .sidebar {
+    flex-basis: 25rem;
+    width: 40%;
+    padding: 1rem 2rem 2rem 2rem;
+  }
+  .logo {
+    margin-bottom: 1px;
+    font-size: 3.5rem;
+  }
+
+  .search-bar {
+    padding: 0rem 1rem 0rem 2rem;
+  }
 }
