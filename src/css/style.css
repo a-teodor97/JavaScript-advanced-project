@@ -36,6 +36,8 @@ body {
   flex-basis: 50rem;
   background-color: var(--color-dark--1);
   padding: 3rem 4rem 4rem 4rem;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -116,6 +118,8 @@ body {
   flex: 1;
   height: 100%;
   background-color: var(--color-light--1);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 /* MEDIA QUERIES */
@@ -131,9 +135,12 @@ body {
   }
 
   .sidebar {
-    flex-basis: 53rem;
-    height: 65%;
+    flex-basis: 40rem;
+    height: 50%;
     padding: 1rem 2rem 2rem 2rem;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
   }
 
   .city-data-container {
@@ -146,6 +153,12 @@ body {
   }
   .search-bar {
     padding: 0rem 1rem 0rem 2rem;
+  }
+
+  #map {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
   }
 }
 
